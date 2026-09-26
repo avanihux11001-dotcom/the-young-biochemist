@@ -1,230 +1,756 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Young Biochemist</title>
+    <title>The Young Biochemist | Research • Discover • Publish • Inspire</title>
 
-    <meta name="description" content="The Young Biochemist — Research, Discover, Publish, Inspire. A student-led science initiative.">
+    <meta name="description"
+        content="The Young Biochemist is a student-led science initiative exploring research, biochemistry, scientific communication and collaboration.">
 
     <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5faf7;
-            color: #173b2a;
-        }
-
-        header {
-            background-color: #ffffff;
-            padding: 25px;
-            text-align: center;
-            border-bottom: 1px solid #dce9e1;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
-        header p {
-            margin-top: 8px;
-            color: #3d7656;
-            font-size: 16px;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            margin-top: 20px;
-        }
-
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #245c3e;
-            font-weight: bold;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 90px 20px;
-            background-color: #e7f4ec;
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7fbf8;
+            color: #163b2a;
             line-height: 1.6;
         }
 
-        .buttons {
-            margin-top: 30px;
+        /* NAVIGATION */
+
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid #dce9e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            text-decoration: none;
+            color: #164d32;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .brand span {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #4b8665;
+            font-weight: normal;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #315b43;
+            margin-left: 22px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #16824a;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 90px 20px;
+            background:
+                radial-gradient(circle at top right, #d8f1e2, transparent 35%),
+                radial-gradient(circle at bottom left, #e3f5eb, transparent 35%),
+                #f7fbf8;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #21834d;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(44px, 8vw, 78px);
+            line-height: 1.05;
+            color: #123d28;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #23864e;
+        }
+
+        .tagline {
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #397052;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            color: #496353;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
         }
 
         .button {
             display: inline-block;
-            padding: 13px 22px;
-            margin: 6px;
-            background-color: #24734a;
-            color: white;
+            padding: 14px 25px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 6px;
+            margin: 6px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .section {
-            max-width: 1000px;
+        .primary {
+            background: #237b48;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #185e36;
+        }
+
+        .secondary {
+            border: 1px solid #237b48;
+            color: #237b48;
+            background: white;
+        }
+
+        .secondary:hover {
+            background: #e8f5ed;
+        }
+
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
             margin: auto;
-            padding: 60px 20px;
         }
 
-        .section h2 {
+        .section-heading {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
+        }
+
+        .section-heading p {
+            color: #658070;
+            max-width: 650px;
+            margin: 12px auto;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            color: #173f2b;
+        }
+
+
+        /* FEATURED RESEARCH */
+
+        .research {
+            background: white;
+        }
+
+        .research-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .research-label {
+            color: #24814c;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .research-box h3 {
+            font-size: 32px;
+            margin: 12px 0;
+            color: #173f2b;
+        }
+
+        .research-box p {
+            color: #587061;
+        }
+
+        .research-info {
+            background: #eaf6ef;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .research-info h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+
+        /* AREAS */
+
+        .areas {
+            background: #eef8f2;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            padding: 30px 22px;
+            border-radius: 16px;
+            border: 1px solid #dcebe2;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            margin-top: 0;
-            color: #24734a;
+            margin-bottom: 8px;
+            color: #1b5736;
         }
 
-        footer {
-            background-color: #173b2a;
+        .card p {
+            color: #64776b;
+            font-size: 14px;
+        }
+
+
+        /* ARTICLES */
+
+        .articles {
+            background: white;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article-card {
+            border: 1px solid #dce9e1;
+            border-radius: 15px;
+            padding: 28px;
+        }
+
+        .article-card small {
+            color: #27804b;
+            font-weight: bold;
+        }
+
+        .article-card h3 {
+            margin: 12px 0;
+        }
+
+        .article-card p {
+            color: #64776b;
+            font-size: 14px;
+        }
+
+
+        /* COMMUNITY */
+
+        .community {
+            background: #173f2b;
             color: white;
             text-align: center;
-            padding: 30px;
-            margin-top: 30px;
         }
+
+        .community h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .community p {
+            max-width: 700px;
+            margin: auto;
+            color: #d7e9dd;
+        }
+
+        .community .button {
+            margin-top: 30px;
+            background: white;
+            color: #1d7043;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #0e2c1d;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #b8d0c1;
+            font-size: 14px;
+        }
+
+        .footer-tagline {
+            margin-top: 8px;
+            letter-spacing: 2px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 12px;
+            }
+
+            .research-box {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 580px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
+
 
 <header>
 
-    <h1>The Young Biochemist</h1>
+    <div class="navbar">
 
-    <p>Research • Discover • Publish • Inspire</p>
+        <a href="#" class="brand">
+            THE YOUNG BIOCHEMIST
+            <span>STUDENT-LED SCIENCE INITIATIVE</span>
+        </a>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Research</a>
-        <a href="#">Articles</a>
-        <a href="#">Projects</a>
-        <a href="#">Community</a>
-        <a href="#">Events</a>
-        <a href="#">Contact</a>
-    </nav>
+        <nav>
+            <a href="#research">Research</a>
+            <a href="#articles">Articles</a>
+            <a href="#community">Community</a>
+            <a href="#events">Events</a>
+        </nav>
+
+    </div>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-    <h2>Exploring the Science of Life</h2>
+    <div class="hero-content">
 
-    <p>
-        The Young Biochemist is a student-led science initiative
-        created to explore research, share scientific knowledge,
-        encourage discovery, and connect young minds passionate about science.
-    </p>
-
-    <div class="buttons">
-        <a href="#" class="button">Explore Research</a>
-        <a href="#" class="button">Join the Community</a>
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>Discover The Young Biochemist</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🔬 Research</h3>
-            <p>
-                Explore research projects, scientific investigations,
-                and discoveries in biochemistry and related fields.
-            </p>
+        <div class="eyebrow">
+            A Student-Led Science Initiative
         </div>
 
-        <div class="card">
-            <h3>📚 Articles</h3>
-            <p>
-                Read articles exploring topics such as cancer research,
-                oxidative stress, antioxidants, genetics, and biotechnology.
-            </p>
+        <h1>
+            The Young <span>Biochemist</span>
+        </h1>
+
+        <div class="tagline">
+            Research • Discover • Publish • Inspire
         </div>
 
-        <div class="card">
-            <h3>🧪 Projects</h3>
-            <p>
-                Discover student-led scientific projects and
-                research initiatives.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🌍 Community</h3>
-            <p>
-                Connect with students interested in science,
-                research, discussion, and collaboration.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>Upcoming Events</h2>
-
-    <div class="card">
-
-        <h3>Science Discussions & Meetings</h3>
-
-        <p>
-            Information about upcoming Young Biochemist meetings,
-            discussions, presentations, and other scientific events
-            will appear here.
+        <p class="hero-description">
+            Exploring the science of life through research,
+            scientific communication, student projects,
+            discussion and collaboration.
         </p>
 
+        <div class="hero-buttons">
+
+            <a href="#research" class="button primary">
+                Explore Research
+            </a>
+
+            <a href="#community" class="button secondary">
+                Join the Community
+            </a>
+
+        </div>
+
     </div>
 
 </section>
 
+
+<!-- RESEARCH -->
+
+<section class="research" id="research">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Research & Discovery</h2>
+
+            <p>
+                Explore scientific research, investigations and
+                projects covering biochemistry and related fields.
+            </p>
+
+        </div>
+
+
+        <div class="research-box">
+
+            <div>
+
+                <div class="research-label">
+                    FEATURED RESEARCH
+                </div>
+
+                <h3>
+                    Your Published Research
+                </h3>
+
+                <p>
+                    This space will feature your published research
+                    and future scientific investigations.
+                    Each project can include its background,
+                    methodology, findings, discussion and references.
+                </p>
+
+            </div>
+
+
+            <div class="research-info">
+
+                <h4>
+                    Building a Culture of Young Researchers
+                </h4>
+
+                <p>
+                    The Young Biochemist aims to encourage students
+                    to explore scientific questions, communicate
+                    research and share their discoveries.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SCIENCE AREAS -->
+
+<section class="areas">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Explore Science</h2>
+
+            <p>
+                Discover topics across the life sciences.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">🧬</div>
+
+                <h3>Biochemistry</h3>
+
+                <p>
+                    Explore the chemistry and molecular processes
+                    underlying life.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🔬</div>
+
+                <h3>Research</h3>
+
+                <p>
+                    Discover student-led investigations,
+                    projects and scientific questions.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🧪</div>
+
+                <h3>Biotechnology</h3>
+
+                <p>
+                    Explore technologies that use biology
+                    to solve scientific problems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🌿</div>
+
+                <h3>Life Sciences</h3>
+
+                <p>
+                    Explore genetics, molecular biology,
+                    health and the living world.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ARTICLES -->
+
+<section class="articles" id="articles">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Latest Science Articles</h2>
+
+            <p>
+                Scientific writing designed to make complex
+                ideas easier to explore and understand.
+            </p>
+
+        </div>
+
+
+        <div class="article-grid">
+
+
+            <div class="article-card">
+
+                <small>RESEARCH TOPIC</small>
+
+                <h3>
+                    Cancer Research
+                </h3>
+
+                <p>
+                    Explore the biological mechanisms involved
+                    in cancer and current areas of research.
+                </p>
+
+            </div>
+
+
+            <div class="article-card">
+
+                <small>BIOCHEMISTRY</small>
+
+                <h3>
+                    Oxidative Stress
+                </h3>
+
+                <p>
+                    Discover how oxidative stress affects
+                    biological systems and why it matters.
+                </p>
+
+            </div>
+
+
+            <div class="article-card">
+
+                <small>MOLECULAR BIOLOGY</small>
+
+                <h3>
+                    Antioxidants
+                </h3>
+
+                <p>
+                    Explore the biochemical role of antioxidants
+                    and their relationship with oxidative processes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section class="community" id="community">
+
+    <div class="container">
+
+        <h2>
+            Join The Young Biochemist
+        </h2>
+
+        <p>
+            Become part of a growing student science community.
+            Participate in scientific discussions, projects,
+            events and collaborative activities.
+        </p>
+
+        <a href="#" class="button">
+            Join the Community
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- EVENTS -->
+
+<section id="events">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Upcoming Events</h2>
+
+            <p>
+                Science discussions, meetings, presentations
+                and future Young Biochemist activities.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Events Coming Soon
+            </h3>
+
+            <p>
+                Details about upcoming meetings and scientific
+                activities will be announced here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    <p>© 2026 The Young Biochemist</p>
+    <h3>
+        The Young Biochemist
+    </h3>
 
-    <p>Research • Discover • Publish • Inspire</p>
+    <p class="footer-tagline">
+        Research • Discover • Publish • Inspire
+    </p>
+
+    <p>
+        © 2026 The Young Biochemist
+    </p>
 
 </footer>
+
 
 </body>
 </html>
