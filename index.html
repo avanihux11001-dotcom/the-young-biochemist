@@ -25,7 +25,10 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         header {
             background: rgba(255, 255, 255, 0.97);
@@ -38,7 +41,7 @@
         .navbar {
             max-width: 1150px;
             margin: auto;
-            padding: 18px 25px;
+            padding: 14px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,15 +51,25 @@
             text-decoration: none;
             color: #164d32;
             font-weight: bold;
-            font-size: 21px;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
         }
 
         .brand span {
             display: block;
-            font-size: 11px;
-            letter-spacing: 2px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
             color: #4b8665;
             font-weight: normal;
+            margin-top: 2px;
         }
 
         nav a {
@@ -64,6 +77,7 @@
             color: #315b43;
             margin-left: 22px;
             font-size: 14px;
+            font-weight: 500;
         }
 
         nav a:hover {
@@ -71,7 +85,9 @@
         }
 
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 650px;
@@ -80,6 +96,7 @@
             justify-content: center;
             text-align: center;
             padding: 90px 20px;
+
             background:
                 radial-gradient(circle at top right, #d8f1e2, transparent 35%),
                 radial-gradient(circle at bottom left, #e3f5eb, transparent 35%),
@@ -88,6 +105,13 @@
 
         .hero-content {
             max-width: 850px;
+        }
+
+        .hero-logo {
+            width: 190px;
+            height: 190px;
+            object-fit: contain;
+            margin-bottom: 25px;
         }
 
         .eyebrow {
@@ -158,7 +182,9 @@
         }
 
 
-        /* GENERAL SECTIONS */
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
             padding: 85px 20px;
@@ -186,7 +212,9 @@
         }
 
 
-        /* FEATURED RESEARCH */
+        /* =========================
+           FEATURED RESEARCH
+        ========================= */
 
         .research {
             background: white;
@@ -228,7 +256,9 @@
         }
 
 
-        /* AREAS */
+        /* =========================
+           SCIENCE AREAS
+        ========================= */
 
         .areas {
             background: #eef8f2;
@@ -268,7 +298,9 @@
         }
 
 
-        /* ARTICLES */
+        /* =========================
+           ARTICLES
+        ========================= */
 
         .articles {
             background: white;
@@ -301,7 +333,9 @@
         }
 
 
-        /* COMMUNITY */
+        /* =========================
+           COMMUNITY
+        ========================= */
 
         .community {
             background: #173f2b;
@@ -327,7 +361,18 @@
         }
 
 
-        /* FOOTER */
+        /* =========================
+           EVENTS
+        ========================= */
+
+        #events {
+            background: #f7fbf8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #0e2c1d;
@@ -347,13 +392,27 @@
         }
 
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
             .navbar {
                 flex-direction: column;
                 gap: 15px;
+                text-align: center;
+            }
+
+            .brand {
+                justify-content: center;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
             }
 
             nav a {
@@ -373,7 +432,13 @@
                 grid-template-columns: 1fr;
             }
 
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+            }
+
         }
+
 
         @media (max-width: 500px) {
 
@@ -385,29 +450,75 @@
                 min-height: 580px;
             }
 
+            .hero-logo {
+                width: 130px;
+                height: 130px;
+            }
+
+            .brand {
+                font-size: 16px;
+            }
+
+            .brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .brand span {
+                font-size: 8px;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
     <div class="navbar">
 
-        <a href="#" class="brand">
-            THE YOUNG BIOCHEMIST
-            <span>STUDENT-LED SCIENCE INITIATIVE</span>
+        <a href="index.html" class="brand">
+
+            <img src="logo.jpg" alt="The Young Biochemist Logo">
+
+            <div>
+                THE YOUNG BIOCHEMIST
+
+                <span>
+                    STUDENT-LED SCIENCE INITIATIVE
+                </span>
+            </div>
+
         </a>
 
+
         <nav>
-            <a href="#research">Research</a>
-            <a href="#articles">Articles</a>
-            <a href="#community">Community</a>
-            <a href="#events">Events</a>
+
+            <a href="research.html">
+                Research
+            </a>
+
+            <a href="#articles">
+                Articles
+            </a>
+
+            <a href="#community">
+                Community
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
         </nav>
 
     </div>
@@ -415,35 +526,51 @@
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
+        <img
+            src="logo.jpg"
+            alt="The Young Biochemist"
+            class="hero-logo"
+        >
+
+
         <div class="eyebrow">
             A Student-Led Science Initiative
         </div>
+
 
         <h1>
             The Young <span>Biochemist</span>
         </h1>
 
+
         <div class="tagline">
             Research • Discover • Publish • Inspire
         </div>
 
+
         <p class="hero-description">
+
             Exploring the science of life through research,
             scientific communication, student projects,
             discussion and collaboration.
+
         </p>
+
 
         <div class="hero-buttons">
 
-            <a href="#research.html" class="button primary">
+            <a href="research.html" class="button primary">
                 Explore Research
             </a>
+
 
             <a href="#community" class="button secondary">
                 Join the Community
@@ -456,7 +583,9 @@
 </section>
 
 
-<!-- RESEARCH -->
+<!-- =========================
+     RESEARCH
+========================= -->
 
 <section class="research" id="research">
 
@@ -464,11 +593,15 @@
 
         <div class="section-heading">
 
-            <h2>Research & Discovery</h2>
+            <h2>
+                Research & Discovery
+            </h2>
 
             <p>
+
                 Explore scientific research, investigations and
                 projects covering biochemistry and related fields.
+
             </p>
 
         </div>
@@ -476,22 +609,34 @@
 
         <div class="research-box">
 
+
             <div>
 
                 <div class="research-label">
                     FEATURED RESEARCH
                 </div>
 
+
                 <h3>
-                    Your Published Research
+                    Enzyme Activity Under Different Conditions
                 </h3>
 
+
                 <p>
-                    This space will feature your published research
-                    and future scientific investigations.
-                    Each project can include its background,
-                    methodology, findings, discussion and references.
+
+                    An experimental investigation of catalase activity
+                    under different conditions, including temperature,
+                    pressure, substrate concentration and other factors.
+
                 </p>
+
+
+                <a
+                    href="research.html"
+                    class="button primary"
+                >
+                    View Research
+                </a>
 
             </div>
 
@@ -503,9 +648,11 @@
                 </h4>
 
                 <p>
+
                     The Young Biochemist aims to encourage students
                     to explore scientific questions, communicate
                     research and share their discoveries.
+
                 </p>
 
             </div>
@@ -517,7 +664,9 @@
 </section>
 
 
-<!-- SCIENCE AREAS -->
+<!-- =========================
+     SCIENCE AREAS
+========================= -->
 
 <section class="areas">
 
@@ -525,7 +674,9 @@
 
         <div class="section-heading">
 
-            <h2>Explore Science</h2>
+            <h2>
+                Explore Science
+            </h2>
 
             <p>
                 Discover topics across the life sciences.
@@ -536,15 +687,22 @@
 
         <div class="cards">
 
+
             <div class="card">
 
-                <div class="card-icon">🧬</div>
+                <div class="card-icon">
+                    🧬
+                </div>
 
-                <h3>Biochemistry</h3>
+                <h3>
+                    Biochemistry
+                </h3>
 
                 <p>
+
                     Explore the chemistry and molecular processes
                     underlying life.
+
                 </p>
 
             </div>
@@ -552,13 +710,19 @@
 
             <div class="card">
 
-                <div class="card-icon">🔬</div>
+                <div class="card-icon">
+                    🔬
+                </div>
 
-                <h3>Research</h3>
+                <h3>
+                    Research
+                </h3>
 
                 <p>
+
                     Discover student-led investigations,
                     projects and scientific questions.
+
                 </p>
 
             </div>
@@ -566,13 +730,19 @@
 
             <div class="card">
 
-                <div class="card-icon">🧪</div>
+                <div class="card-icon">
+                    🧪
+                </div>
 
-                <h3>Biotechnology</h3>
+                <h3>
+                    Biotechnology
+                </h3>
 
                 <p>
+
                     Explore technologies that use biology
                     to solve scientific problems.
+
                 </p>
 
             </div>
@@ -580,13 +750,19 @@
 
             <div class="card">
 
-                <div class="card-icon">🌿</div>
+                <div class="card-icon">
+                    🌿
+                </div>
 
-                <h3>Life Sciences</h3>
+                <h3>
+                    Life Sciences
+                </h3>
 
                 <p>
+
                     Explore genetics, molecular biology,
                     health and the living world.
+
                 </p>
 
             </div>
@@ -598,7 +774,9 @@
 </section>
 
 
-<!-- ARTICLES -->
+<!-- =========================
+     ARTICLES
+========================= -->
 
 <section class="articles" id="articles">
 
@@ -606,11 +784,15 @@
 
         <div class="section-heading">
 
-            <h2>Latest Science Articles</h2>
+            <h2>
+                Latest Science Articles
+            </h2>
 
             <p>
+
                 Scientific writing designed to make complex
                 ideas easier to explore and understand.
+
             </p>
 
         </div>
@@ -621,15 +803,19 @@
 
             <div class="article-card">
 
-                <small>RESEARCH TOPIC</small>
+                <small>
+                    RESEARCH TOPIC
+                </small>
 
                 <h3>
                     Cancer Research
                 </h3>
 
                 <p>
+
                     Explore the biological mechanisms involved
                     in cancer and current areas of research.
+
                 </p>
 
             </div>
@@ -637,15 +823,19 @@
 
             <div class="article-card">
 
-                <small>BIOCHEMISTRY</small>
+                <small>
+                    BIOCHEMISTRY
+                </small>
 
                 <h3>
                     Oxidative Stress
                 </h3>
 
                 <p>
+
                     Discover how oxidative stress affects
                     biological systems and why it matters.
+
                 </p>
 
             </div>
@@ -653,15 +843,19 @@
 
             <div class="article-card">
 
-                <small>MOLECULAR BIOLOGY</small>
+                <small>
+                    MOLECULAR BIOLOGY
+                </small>
 
                 <h3>
                     Antioxidants
                 </h3>
 
                 <p>
+
                     Explore the biochemical role of antioxidants
                     and their relationship with oxidative processes.
+
                 </p>
 
             </div>
@@ -673,7 +867,9 @@
 </section>
 
 
-<!-- COMMUNITY -->
+<!-- =========================
+     COMMUNITY
+========================= -->
 
 <section class="community" id="community">
 
@@ -683,11 +879,15 @@
             Join The Young Biochemist
         </h2>
 
+
         <p>
+
             Become part of a growing student science community.
             Participate in scientific discussions, projects,
             events and collaborative activities.
+
         </p>
+
 
         <a href="#" class="button">
             Join the Community
@@ -698,7 +898,9 @@
 </section>
 
 
-<!-- EVENTS -->
+<!-- =========================
+     EVENTS
+========================= -->
 
 <section id="events">
 
@@ -706,14 +908,19 @@
 
         <div class="section-heading">
 
-            <h2>Upcoming Events</h2>
+            <h2>
+                Upcoming Events
+            </h2>
 
             <p>
+
                 Science discussions, meetings, presentations
                 and future Young Biochemist activities.
+
             </p>
 
         </div>
+
 
         <div class="card">
 
@@ -722,8 +929,10 @@
             </h3>
 
             <p>
+
                 Details about upcoming meetings and scientific
                 activities will be announced here.
+
             </p>
 
         </div>
@@ -733,7 +942,9 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -741,9 +952,11 @@
         The Young Biochemist
     </h3>
 
+
     <p class="footer-tagline">
         Research • Discover • Publish • Inspire
     </p>
+
 
     <p>
         © 2026 The Young Biochemist
@@ -753,4 +966,5 @@
 
 
 </body>
+
 </html>
