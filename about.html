@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | The Young Biochemist</title>
+
+    <meta name="description"
+        content="About Avani Kaushik, student researcher and founder of The Young Biochemist.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --dark: #123d28;
+            --green: #237b48;
+            --light: #eaf6ef;
+            --pale: #f6faf7;
+            --text: #294537;
+            --muted: #64776b;
+            --border: #dce9e1;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--pale);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--dark);
+        }
+
+        .brand img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brand strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .brand span {
+            display: block;
+            color: #5d7b6a;
+            font-size: 9px;
+            letter-spacing: 1.3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+        }
+
+        nav a {
+            color: #355a46;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .hero {
+            padding: 85px 20px 70px;
+            background:
+                radial-gradient(circle at 10% 20%, #e2f4e9, transparent 32%),
+                radial-gradient(circle at 90% 80%, #dcefe4, transparent 30%),
+                var(--pale);
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 105px;
+            height: 105px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            font-size: clamp(40px, 7vw, 64px);
+            line-height: 1.1;
+            margin: 10px 0 14px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        section {
+            padding: 75px 20px;
+        }
+
+        .section-heading {
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark);
+            font-size: 34px;
+            margin-bottom: 9px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .intro {
+            background: white;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.25fr 0.9fr;
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .profile-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 12px;
+            background: white;
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 330px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+            display: block;
+        }
+
+        .intro-text,
+        .vision-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .intro-text {
+            background: white;
+        }
+
+        .intro-text p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .vision-card {
+            background: var(--dark);
+            color: white;
+        }
+
+        .vision-card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .vision-card p {
+            color: #d7e9dd;
+            font-size: 15px;
+        }
+
+        .interests {
+            background: var(--pale);
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .interest {
+            padding: 19px 20px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            color: #315b43;
+            font-weight: 700;
+        }
+
+        .interest::before {
+            content: "•";
+            color: var(--green);
+            margin-right: 9px;
+        }
+
+        .journey {
+            background: white;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .journey-card {
+            padding: 27px 22px;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+        }
+
+        .journey-card .icon {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .journey-card h3 {
+            color: var(--dark);
+            margin-bottom: 7px;
+        }
+
+        .journey-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about-project {
+            background: #eef8f2;
+        }
+
+        .project-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 38px;
+        }
+
+        .project-box h2 {
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .project-box p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .cta {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 680px;
+            margin: auto;
+            color: #d7e9dd;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 13px 23px;
+            border-radius: 26px;
+            background: white;
+            color: #1d7043;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            background: var(--light);
+        }
+
+        footer {
+            background: #0b281a;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #9eb8a8;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 850px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 0;
+                gap: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 13px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: min(100% - 28px, 1100px);
+            }
+
+            section {
+                padding: 58px 14px;
+            }
+
+            .hero {
+                padding: 60px 14px;
+            }
+
+            .intro-text,
+            .vision-card,
+            .project-box {
+                padding: 27px;
+            }
+
+            .interest-grid,
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+
+        <a href="index.html" class="brand">
+            <img src="logo.jpg" alt="The Young Biochemist logo">
+            <div>
+                <strong>THE YOUNG BIOCHEMIST</strong>
+                <span>STUDENT-LED SCIENCE INITIATIVE</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="research.html">Research</a>
+            <a href="index.html#articles">Articles</a>
+            <a href="index.html#community">Community</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+    <img class="hero-logo" src="logo.jpg" alt="The Young Biochemist logo">
+
+    <div class="eyebrow">About the Founder</div>
+
+    <h1>Meet <span>Avani Kaushik</span></h1>
+
+    <p>
+        Student researcher, author and founder of The Young Biochemist,
+        exploring the world of biochemistry through research,
+        communication and curiosity.
+    </p>
+</section>
+
+
+<section class="intro">
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Portrait of Avani Kaushik, founder of The Young Biochemist">
+            </div>
+
+            <div class="intro-text">
+                <div class="section-heading">
+                    <h2>Introduction</h2>
+                </div>
+
+                <p>
+                    Hello, I am <strong>Avani Kaushik</strong>.
+                </p>
+
+                <p>
+                    I am a student passionate about Biochemistry, Molecular
+                    Biology, and Scientific Research. Alongside my academic
+                    interests, I am a published author, guitarist, basketball
+                    player and Karate bronze medalist.
+                </p>
+
+                <p>
+                    This website serves as a platform to document my
+                    independent research, share scientific insights and
+                    explore topics in biochemistry. Through research and
+                    scientific communication, I hope to contribute to a
+                    deeper understanding of the natural world and inspire
+                    curiosity in others.
+                </p>
+            </div>
+
+            <div class="vision-card">
+                <h3>My Vision</h3>
+
+                <p>
+                    I believe curiosity is one of the starting points of
+                    scientific discovery. My goal is to continue learning,
+                    asking questions, conducting meaningful research and
+                    communicating scientific ideas in ways that can be
+                    understood and appreciated by others.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="interests">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Research Interests</h2>
+            <p>
+                Areas of science that I am currently interested in exploring.
+            </p>
+        </div>
+
+        <div class="interest-grid">
+            <div class="interest">Biochemistry</div>
+            <div class="interest">Molecular Biology</div>
+            <div class="interest">Enzymology</div>
+            <div class="interest">Cancer Biology</div>
+            <div class="interest">Biotechnology</div>
+            <div class="interest">Antioxidants &amp; Oxidative Stress</div>
+            <div class="interest">Genetics</div>
+            <div class="interest">Cell Biology</div>
+            <div class="interest">Scientific Research &amp; Communication</div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="journey">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Beyond the Laboratory</h2>
+            <p>
+                Science is an important part of my journey, but it is not
+                the only way
