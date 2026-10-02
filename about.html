@@ -174,33 +174,36 @@
             display: grid;
             grid-template-columns: 0.85fr 1.25fr 0.9fr;
             gap: 22px;
-            align-items: stretch;
+            align-items: start;
         }
 
         .profile-card {
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 12px;
-            background: white;
-        }
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 12px;
+    background: white;
+    height: 330px;
+}
 
-        .profile-card img {
+.profile-card img {
     width: 100%;
-    height: auto;
-    max-height: 500px;
+    height: 100%;
     object-fit: contain;
     object-position: center;
     border-radius: 14px;
     display: block;
 }
-        }
+
 
         .intro-text,
         .vision-card {
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px;
-        }
+    background: var(--dark);
+    color: white;
+    align-self: start;
+    height: 330px;
+    border-radius: 20px;
+    padding: 35px;
+}
 
         .intro-text {
             background: white;
