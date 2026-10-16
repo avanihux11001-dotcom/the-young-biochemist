@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Science Society | The Young Biochemist</title>
+    <meta
+        name="description"
+        content="The Young Biochemist is a student science society for discussions, debates, projects, and events."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7fbf8;
+            color: #294537;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce9e1;
+        }
+
+        nav {
+            width: min(1100px, calc(100% - 36px));
+            min-height: 74px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand {
+            color: #123d28;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            list-style: none;
+        }
+
+        nav ul a {
+            color: #355a46;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        nav ul a:hover {
+            color: #237b48;
+        }
+
+        .hero {
+            padding: 90px 20px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 10% 20%, #e2f4e9, transparent 32%),
+                radial-gradient(circle at 90% 80%, #dcefe4, transparent 30%),
+                #f7fbf8;
+        }
+
+        .eyebrow {
+            color: #237b48;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 12px 0;
+            color: #123d28;
+            font-size: clamp(38px, 7vw, 60px);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #64776b;
+            font-size: 18px;
+        }
+
+        main section {
+            padding: 65px 20px;
+        }
+
+        .container {
+            width: min(100%, 1000px);
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: #123d28;
+            font-size: 32px;
+        }
+
+        .about {
+            background: #ffffff;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .activity {
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #dce9e1;
+            border-radius: 16px;
+        }
+
+        .activity h3 {
+            margin-bottom: 7px;
+            color: #237b48;
+        }
+
+        .join {
+            background: #123d28;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .join h2 {
+            color: #ffffff;
+        }
+
+        .join p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #d7e9dd;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 22px;
+            border-radius: 28px;
+            background: #ffffff;
+            color: #1d7043;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #eaf6ef;
+        }
+
+        .social {
+            margin-top: 24px;
+        }
+
+        .social a {
+            display: inline-block;
+            margin-top: 8px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 25px 16px;
+            background: #0b281a;
+            color: #d7e9dd;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 14px 0;
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 10px 16px;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main section {
+                padding: 50px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <a class="brand" href="index.html">THE YOUNG BIOCHEMIST</a>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="society.html" aria-current="page">Science Society</a></li>
+                <li><a href="index.html#articles">Articles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="eyebrow">Student Science Community</div>
+            <h1>The Young Biochemist</h1>
+            <p>
+                A space for students to explore scientific ideas, ask questions,
+                share perspectives, and learn together.
+            </p>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>About the Society</h2>
+                <p>
+                    The Young Biochemist is a science society for students who
+                    are curious about biochemistry and the wider world of
+                    science. Members can take part in discussions, debates,
+                    projects, and events.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>What We Do</h2>
+                <p>
+                    Our activities encourage students to explore science,
+                    exchange ideas, and learn together.
+                </p>
+
+                <div class="activity-grid">
+                    <article class="activity">
+                        <h3>Science Discussions</h3>
+                        <p>
+                            Explore questions and discoveries across
+                            biochemistry and the life sciences.
+                        </p>
+                    </article>
+
+                    <article class="activity">
+                        <h3>Debates</h3>
+                        <p>
+                            Consider different perspectives on scientific
+                            ideas and topics.
+                        </p>
+                    </article>
+
+                    <article class="activity">
+                        <h3>Projects</h3>
+                        <p>
+                            Develop student projects that encourage research,
+                            investigation, and science communication.
+                        </p>
+                    </article>
+
+                    <article class="activity">
+                        <h3>Events</h3>
+                        <p>
+                            Take part in science-focused events and activities
+                            for students.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="join">
+            <div class="container">
+                <h2>Interested in Taking Part?</h2>
+                <p>
+                    Students interested in science discussions, debates,
+                    projects, or events are welcome to get in touch.
+                </p>
+
+                <a class="button" href="mailto:avani.hux11001@gmail.com">
+                    Email The Young Biochemist
+                </a>
+
+                <div class="social">
+                    <p>Follow on Instagram:</p>
+                    <a
+                        href="https://www.instagram.com/cozycosmoswrites/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >@AuthorCosmos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 The Young Biochemist · Student-Led Science Initiative
+    </footer>
+</body>
+</html>
