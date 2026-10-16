@@ -308,28 +308,88 @@
 
         .article-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
         }
 
         .article-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: #ffffff;
             border: 1px solid #dce9e1;
             border-radius: 15px;
-            padding: 28px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(30, 80, 60, 0.10);
+        }
+
+        .article-card > a:first-child {
+            display: block;
+        }
+
+        .article-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .article-card-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 22px;
         }
 
         .article-card small {
             color: #27804b;
             font-weight: bold;
+            letter-spacing: 0.7px;
         }
 
         .article-card h3 {
-            margin: 12px 0;
+            margin: 10px 0;
+            color: #173f2b;
+            font-size: 20px;
+            line-height: 1.35;
+        }
+
+        .article-card h3 a {
+            color: inherit;
+            text-decoration: none;
         }
 
         .article-card p {
             color: #64776b;
             font-size: 14px;
+        }
+
+        .article-card .read-link {
+            margin-top: auto;
+            padding-top: 16px;
+            color: #237b48;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .article-card .read-link:hover {
+            text-decoration: underline;
+        }
+
+        .medium-profile-link {
+            margin-top: 30px;
+            color: #587061;
+            text-align: center;
+        }
+
+        .medium-profile-link a {
+            color: #237b48;
+            font-weight: 700;
         }
 
 
@@ -429,7 +489,7 @@
             }
 
             .article-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .hero-logo {
@@ -443,6 +503,10 @@
         @media (max-width: 500px) {
 
             .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .article-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -803,67 +867,59 @@
 
         <div class="article-grid">
 
+            <article class="article-card">
+                <a href="article-learning.html" aria-label="Read What Happens to Your Brain When You Learn Something New?">
+                    <img src="images/articles/brain-learning.jpg" alt="Illustration of a brain with glowing neural connections beside an open book." loading="lazy">
+                </a>
+                <div class="article-card-content">
+                    <small>NEUROSCIENCE</small>
+                    <h3><a href="article-learning.html">What Happens to Your Brain When You Learn Something New?</a></h3>
+                    <p>Explore neuroplasticity, practice, memory, sleep, and how the brain adapts through learning.</p>
+                    <a class="read-link" href="article-learning.html">Read article →</a>
+                </div>
+            </article>
 
-            <div class="article-card">
+            <article class="article-card">
+                <a href="article-crispr.html" aria-label="Read CRISPR Explained: How Scientists Can Edit DNA">
+                    <img src="images/articles/crispr-dna.jpg" alt="Illustration of DNA and a Cas9-like protein representing CRISPR gene editing." loading="lazy">
+                </a>
+                <div class="article-card-content">
+                    <small>MOLECULAR BIOLOGY</small>
+                    <h3><a href="article-crispr.html">CRISPR Explained: How Scientists Can Edit DNA</a></h3>
+                    <p>A student-friendly introduction to guide RNA, Cas9, gene editing, safety, and ethics.</p>
+                    <a class="read-link" href="article-crispr.html">Read article →</a>
+                </div>
+            </article>
 
-                <small>
-                    RESEARCH TOPIC
-                </small>
+            <article class="article-card">
+                <a href="article-oxidative-stress.html" aria-label="Read Oxidative Stress Explained: How Unstable Molecules Affect Our Cells">
+                    <img src="images/articles/oxidative-stress.jpg" alt="Illustration of cellular structures, reactive molecules, and antioxidant enzymes." loading="lazy">
+                </a>
+                <div class="article-card-content">
+                    <small>BIOCHEMISTRY</small>
+                    <h3><a href="article-oxidative-stress.html">Oxidative Stress Explained: How Unstable Molecules Affect Our Cells</a></h3>
+                    <p>Learn how reactive oxygen species, antioxidant defenses, and cellular balance are connected.</p>
+                    <a class="read-link" href="article-oxidative-stress.html">Read article →</a>
+                </div>
+            </article>
 
-                <h3>
-                    Cancer Research
-                </h3>
-
-                <p>
-
-                    Explore the biological mechanisms involved
-                    in cancer and current areas of research.
-
-                </p>
-
-            </div>
-
-
-            <div class="article-card">
-
-                <small>
-                    BIOCHEMISTRY
-                </small>
-
-                <h3>
-                    Oxidative Stress
-                </h3>
-
-                <p>
-
-                    Discover how oxidative stress affects
-                    biological systems and why it matters.
-
-                </p>
-
-            </div>
-
-
-            <div class="article-card">
-
-                <small>
-                    MOLECULAR BIOLOGY
-                </small>
-
-                <h3>
-                    Antioxidants
-                </h3>
-
-                <p>
-
-                    Explore the biochemical role of antioxidants
-                    and their relationship with oxidative processes.
-
-                </p>
-
-            </div>
-
+            <article class="article-card">
+                <a href="https://cozycosmoswrites.medium.com/what-a-potato-taught-me-about-enzymes-exploring-the-hidden-chemistry-of-life-f6ea0d38f11b" target="_blank" rel="noopener noreferrer" aria-label="Read the potato enzyme article on Medium">
+                    <img src="images/articles/catalase-potato.jpg" alt="Potato cubes bubbling in a dish beside a catalase protein illustration." loading="lazy">
+                </a>
+                <div class="article-card-content">
+                    <small>ENZYMOLOGY · ON MEDIUM</small>
+                    <h3><a href="https://cozycosmoswrites.medium.com/what-a-potato-taught-me-about-enzymes-exploring-the-hidden-chemistry-of-life-f6ea0d38f11b" target="_blank" rel="noopener noreferrer">What a Potato Taught Me About Enzymes: Exploring the Hidden Chemistry of Life</a></h3>
+                    <p>How a simple potato experiment explored catalase activity under different temperatures and pH conditions.</p>
+                    <a class="read-link" href="https://cozycosmoswrites.medium.com/what-a-potato-taught-me-about-enzymes-exploring-the-hidden-chemistry-of-life-f6ea0d38f11b" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+                </div>
+            </article>
         </div>
+
+        <p class="medium-profile-link">
+            More writing by Avani on
+            <a href="https://cozycosmoswrites.medium.com/" target="_blank" rel="noopener noreferrer">Medium · @AuthorCosmos</a>
+        </p>
 
     </div>
 
