@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Young Biochemist</title>
+    <meta
+        name="description"
+        content="Contact The Young Biochemist by email or Instagram."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7fbf8;
+            color: #294537;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce9e1;
+        }
+
+        nav {
+            width: min(1100px, calc(100% - 36px));
+            min-height: 74px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand {
+            color: #123d28;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            list-style: none;
+        }
+
+        nav ul a {
+            color: #355a46;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        nav ul a:hover {
+            color: #237b48;
+        }
+
+        main {
+            min-height: calc(100vh - 150px);
+            padding: 70px 18px;
+        }
+
+        .contact-card {
+            width: min(100%, 760px);
+            margin: auto;
+            padding: 42px;
+            background: #ffffff;
+            border: 1px solid #dce9e1;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(30, 80, 60, 0.06);
+        }
+
+        .eyebrow {
+            color: #237b48;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 10px 0 14px;
+            color: #123d28;
+            font-size: clamp(36px, 7vw, 52px);
+            line-height: 1.1;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+            color: #64776b;
+        }
+
+        .contact-item {
+            padding: 20px 0;
+            border-top: 1px solid #dce9e1;
+        }
+
+        .contact-item h2 {
+            margin-bottom: 5px;
+            color: #123d28;
+            font-size: 20px;
+        }
+
+        .contact-item a {
+            color: #237b48;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item a:hover {
+            color: #123d28;
+        }
+
+        footer {
+            padding: 24px 16px;
+            background: #0b281a;
+            color: #d7e9dd;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 14px 0;
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 10px 14px;
+            }
+
+            .contact-card {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <a class="brand" href="index.html">THE YOUNG BIOCHEMIST</a>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="society.html">Science Society</a></li>
+                <li><a href="index.html#articles">Articles</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-card">
+            <div class="eyebrow">Get in touch</div>
+            <h1>Contact The Young Biochemist</h1>
+            <p class="intro">
+                Students interested in science discussions, debates, projects,
+                or events are welcome to get in touch.
+            </p>
+
+            <div class="contact-item">
+                <h2>Email</h2>
+                <a href="mailto:avani.hux11001@gmail.com">
+                    avani.hux11001@gmail.com
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <h2>Instagram</h2>
+                <a
+                    href="https://www.instagram.com/cozycosmoswrites/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @AuthorCosmos
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 The Young Biochemist · Student-Led Science Initiative
+    </footer>
+</body>
+</html>
