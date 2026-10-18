@@ -118,6 +118,28 @@
             color: #123d28;
         }
 
+        .email-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .email-actions a {
+            display: inline-block;
+            padding: 9px 15px;
+            border-radius: 22px;
+            background: #237b48;
+            color: #ffffff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .email-actions a:hover {
+            background: #123d28;
+            color: #ffffff;
+        }
+
         footer {
             padding: 24px 16px;
             background: #0b281a;
@@ -169,11 +191,17 @@
                 or events are welcome to get in touch.
             </p>
 
-            <div class="contact-item">
+            <div class="contact-item" id="email">
                 <h2>Email</h2>
-                <a href="mailto:avani.hux11001@gmail.com">
-                    avani.hux11001@gmail.com
-                </a>
+                <p>Email address: <strong>avani.hux11001@gmail.com</strong></p>
+                <div class="email-actions">
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=avani.hux11001%40gmail.com&amp;su=Contact%20The%20Young%20Biochemist" target="_blank" rel="noopener noreferrer">
+                        Compose in Gmail
+                    </a>
+                    <a href="mailto:avani.hux11001@gmail.com?subject=Contact%20The%20Young%20Biochemist">
+                        Use your email app
+                    </a>
+                </div>
             </div>
 
             <div class="contact-item">
